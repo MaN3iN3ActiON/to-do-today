@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Task(props) {
 	return (
 		<li>
-			<em>{props.task.desc} </em>
+			<em>{props.task.title} </em>
 			{props.task.stage}
 		</li>
 	);
