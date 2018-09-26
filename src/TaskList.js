@@ -1,5 +1,5 @@
 import React from 'react';
-import Task from './task';
+import Task from './Task';
 import PropTypes from 'prop-types';
 
 class TaskList extends React.Component {

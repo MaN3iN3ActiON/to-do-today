@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Task(props) {
+	const title = props.task.title;
+	const stage = props.task.stage;
+	//TODO: use CSS to space, use margin or padding
 	return (
 		<li>
-			<em>{props.task.title} </em>
-			{props.task.stage}
+			<strong>{title}</strong>
+			<em>{stage}</em>
 		</li>
 	);
 }
