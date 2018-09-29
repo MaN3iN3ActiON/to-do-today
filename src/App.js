@@ -1,16 +1,18 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import TaskList from './TaskList';
-import { TASKS } from './data';
-import TaskInput from './TaskInput';
+import Header from './header-comps/Header';
+import SideNavBar from './sidenav-comps/SideNavBar';
+import TaskArticle from './task-comps/TaskArticle';
 
 class App extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				<h1>Tasks</h1>
-				<TaskInput />
-				<TaskList data={TASKS} />
+				<Header />
+				<main>
+					<SideNavBar />
+					<TaskArticle />
+				</main>
 			</Fragment>
 		);
 	}

@@ -7,7 +7,12 @@ class TaskList extends React.Component {
 		const taskList = this.props.data.map(task => (
 			<Task key={task.id} task={task} />
 		));
-		return <ul>{taskList}</ul>;
+		return (
+			<section>
+				<h3>Today</h3>
+				<ul>{taskList}</ul>
+			</section>
+		);
 	}
 }
 
