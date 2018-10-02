@@ -3,7 +3,7 @@ import Task from './Task';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Ul = styled.ul`
+const List = styled.ul`
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -18,7 +18,7 @@ class TaskList extends React.Component {
 		return (
 			<section>
 				<h3>Today</h3>
-				<Ul>{taskList}</Ul>
+				<List>{taskList}</List>
 			</section>
 		);
 	}

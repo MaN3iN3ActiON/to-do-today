@@ -11,21 +11,22 @@ const Header = styled.header`
 	border-bottom: solid 1px #ca2100;
 	background-color: #db4c3f;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+	> h1 {
+		max-width: 950px;
+		height: 100%;
+		margin-left: 150px;
+		margin-block-start: 0px;
+		margin-block-end: 0px;
+	}
 `;
 
-const H1 = styled.h1`
-	max-width: 950px;
-	height: 100%;
-	margin-left: 150px;
-	margin-block-start: 0px;
-	margin-block-end: 0px;
-`;
 
 class HeaderContainer extends React.Component {
 	render() {
 		return (
 			<Header>
-				<H1>Tasks</H1>
+				<h1>Tasks</h1>
 			</Header>
 		);
 	}

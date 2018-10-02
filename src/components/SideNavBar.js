@@ -11,12 +11,12 @@ const Aside = styled.aside`
 	overflow-x: hidden;
 	overflow-y: hidden;
 	border-right: 1px solid #f1f1f1;
-`;
 
-const Ul = styled.ul`
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
 `;
 
 class SideNavBar extends React.Component {
@@ -24,14 +24,14 @@ class SideNavBar extends React.Component {
 		return (
 			<Aside>
 				<nav>
-					<Ul>
+					<ul>
 						<li>
 							<a href="#today">Today</a>
 						</li>
 						<li>
 							<a href="#7days">Next 7days</a>
 						</li>
-					</Ul>
+					</ul>
 				</nav>
 			</Aside>
 		);
