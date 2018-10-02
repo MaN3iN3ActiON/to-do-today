@@ -1,0 +1,15 @@
+#ToDo
+- [ ] clone [todoist](https://en.todoist.com/app)
+	- [ ] clone HTML
+		- [x] study/use semantic HTML
+		- [x] basic HTML
+	- [ ] clone CSS
+		- [ ] study css from [MDN/CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS)
+		- [ ] basic CSS
+	- [ ] clone JS
+		- [ ] basic functionality
+- [ ] implement Redux
+	- [ ] learn redux
+	- [ ] basic implementation
+	- [ ] build on it
+- [ ] build backend
