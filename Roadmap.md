@@ -1,4 +1,4 @@
-#ToDo
+# ToDo
 - [ ] clone [todoist](https://en.todoist.com/app)
 	- [ ] clone HTML
 		- [x] study/use semantic HTML
