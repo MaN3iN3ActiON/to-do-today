@@ -5,7 +5,7 @@
         "node": true,
         "commonjs": true,
         "jest": true
-    },
+		},
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parserOptions": {
 				"ecmaVersion": 2018,
@@ -28,7 +28,7 @@
         ],
         "semi": [
             "error",
-            "always"
+            "never"
         ],
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",

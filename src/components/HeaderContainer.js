@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Header = styled.header`
 	height: 43px;
@@ -19,17 +19,12 @@ const Header = styled.header`
 		margin-block-start: 0px;
 		margin-block-end: 0px;
 	}
-`;
+`
 
+const HeaderContainer = () => (
+	<Header>
+		<h1>Tasks</h1>
+	</Header>
+)
 
-class HeaderContainer extends React.Component {
-	render() {
-		return (
-			<Header>
-				<h1>Tasks</h1>
-			</Header>
-		);
-	}
-}
-
-export default HeaderContainer;
+export default HeaderContainer

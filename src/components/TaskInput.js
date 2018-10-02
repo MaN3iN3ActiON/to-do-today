@@ -1,20 +1,20 @@
-import React from 'react';
+import React from 'react'
 
 class TaskInput extends React.Component {
 	constructor(props) {
-		super(props);
-		this.state = { value: '' };
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+		super(props)
+		this.state = { value: '' }
+		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 	handleChange(event) {
-		const value = event.target.value;
-		this.setState({ value });
+		const value = event.target.value
+		this.setState({ value })
 	}
 	handleSubmit(event) {
-		event.preventDefault();
+		event.preventDefault()
 		//things are still static so use alert
-		alert('A task was submitted: ' + this.state.value);
+		alert('A task was submitted: ' + this.state.value)
 	}
 	render() {
 		return (
@@ -29,8 +29,8 @@ class TaskInput extends React.Component {
 				</label>
 				<input type="submit" value="submit" />
 			</form>
-		);
+		)
 	}
 }
 
-export default TaskInput;
+export default TaskInput

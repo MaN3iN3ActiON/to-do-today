@@ -1,5 +1,5 @@
 // kanban stages : {to-do,doing,done}
-export const STAGES = { TO_DO: 'to-do', DOING: 'doing', DONE: 'done' };
+export const STAGES = { TO_DO: 'to-do', DOING: 'doing', DONE: 'done' }
 
 //prioritize using Urg/Imp matrix : {Q1,Q2,Q3,Q4}
 // Q1 = Urg/Imp (quadrant of necessity)
@@ -7,9 +7,9 @@ export const STAGES = { TO_DO: 'to-do', DOING: 'doing', DONE: 'done' };
 // Q3 = Urg/!Imp (quadrant of deception)
 // Q4 = !Urg/!Imp (quadrant of waste)
 
-export const URG_IMP = { Q1: 'q1', Q2: 'q2', Q3: 'q3', Q4: 'q4' };
+export const URG_IMP = { Q1: 'q1', Q2: 'q2', Q3: 'q3', Q4: 'q4' }
 
-export const TASKS = [
+export let TASKS = [
 	{
 		id: 1,
 		title: 'Task1',
@@ -42,4 +42,4 @@ export const TASKS = [
 		stage: STAGES.TO_DO,
 		duration: ''
 	}
-];
+]

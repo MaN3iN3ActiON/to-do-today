@@ -1,10 +1,8 @@
-import React from 'react';
-
-import { TASKS } from '../data';
-
-import TaskList from './TaskList';
-import TaskInput from './TaskInput';
-import styled from 'styled-components';
+import React from 'react'
+import { TASKS } from '../data'
+import TaskList from './TaskList'
+import TaskInput from './TaskInput'
+import styled from 'styled-components'
 
 const Article = styled.article`
 	margin-left: 284px;
@@ -15,17 +13,13 @@ const Article = styled.article`
 	padding: 6px 25px 12px 30px;
 	padding-top: 80px !important;
 	padding-bottom: 85px !important;
-`;
+`
 
-class TaskArticle extends React.Component {
-	render() {
-		return (
-			<Article>
-				<TaskList data={TASKS} />
-				<TaskInput />
-			</Article>
-		);
-	}
-}
+const TaskArticle = () => (
+	<Article>
+		<TaskList data={TASKS} />
+		<TaskInput />
+	</Article>
+)
 
-export default TaskArticle;
+export default TaskArticle
