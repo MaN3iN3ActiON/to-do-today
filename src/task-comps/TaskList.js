@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Ul = styled.ul`
-	list-style: none;
+	list-style-type: none;
 `;
 
 class TaskList extends React.Component {

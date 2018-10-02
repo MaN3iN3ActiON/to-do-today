@@ -6,7 +6,8 @@ import TaskArticle from './task-comps/TaskArticle';
 import styled from 'styled-components';
 
 const Main = styled.main`
-	margin-top: 53px;
+	margin-left: 150px;
+	max-width: 950px;
 `;
 
 class App extends React.Component {
