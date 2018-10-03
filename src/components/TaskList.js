@@ -10,8 +10,8 @@ const List = styled.ul`
 	padding-bottom: 10px;
 `
 
-const TaskList = ({ tasks }) => {
-	const taskList = tasks.map(task => <Task key={task.id} {...task} />)
+const TaskList = ({ tasks, onDoneTaskClick }) => {
+	const taskList = tasks.map(task => <Task key={task.id} {...task} onClick={() => onDoneTaskClick(task.id)}/>)
 	return (
 		<section>
 			<h3>Today</h3>
@@ -21,7 +21,8 @@ const TaskList = ({ tasks }) => {
 }
 
 TaskList.propTypes = {
-	tasks: PropTypes.array
+	tasks: PropTypes.array,
+	onDoneTaskClick: PropTypes.func
 }
 
 export default TaskList

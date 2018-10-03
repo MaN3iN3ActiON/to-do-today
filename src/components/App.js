@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import './App.css'
-import HeaderContainer from './components/HeaderContainer'
-import SideNavBar from './components/SideNavBar'
-import TaskArticle from './components/TaskArticle'
+import HeaderContainer from './HeaderContainer'
+import SideNavBar from './SideNavBar'
+import TaskArticle from './TaskArticle'
 import styled from 'styled-components'
 
 const Main = styled.main`

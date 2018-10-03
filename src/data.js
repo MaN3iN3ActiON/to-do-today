@@ -1,45 +1,35 @@
-// kanban stages : {to-do,doing,done}
-export const STAGE = { TO_DO: 'to-do', DOING: 'doing', DONE: 'done' }
+import STAGE from './constants/stages'
+import URG_IMP from './constants/priorities'
 
-//prioritize using Urg/Imp matrix : {Q1,Q2,Q3,Q4}
-// Q1 = Urg/Imp (quadrant of necessity)
-// Q2 = !Urg/Imp (quadrant of quality)
-// Q3 = Urg/!Imp (quadrant of deception)
-// Q4 = !Urg/!Imp (quadrant of waste)
-
-export const URG_IMP = { Q1: 'q1', Q2: 'q2', Q3: 'q3', Q4: 'q4' }
-
-export let TASKS = [
+let tasks = [
 	{
 		id: 1,
 		title: 'Task1',
 		desc: 'complete task1',
 		priority: URG_IMP.Q1,
-		stage: STAGE.DOING,
-		duration: ''
+		stage: STAGE.DOING
 	},
 	{
 		id: 2,
 		title: 'Task2',
 		desc: 'complete task2',
 		priority: URG_IMP.Q2,
-		stage: STAGE.DOING,
-		duration: ''
+		stage: STAGE.DOING
 	},
 	{
 		id: 3,
 		title: 'Task3',
 		desc: 'complete task3',
 		priority: URG_IMP.Q3,
-		stage: STAGE.DONE,
-		duration: ''
+		stage: STAGE.DONE
 	},
 	{
 		id: 4,
 		title: 'Task4',
 		desc: 'complete task4',
 		priority: URG_IMP.Q4,
-		stage: STAGE.TO_DO,
-		duration: ''
+		stage: STAGE.TO_DO
 	}
 ]
+
+export default { tasks }

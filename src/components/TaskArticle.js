@@ -1,6 +1,5 @@
 import React from 'react'
-import { TASKS } from '../data'
-import TaskList from './TaskList'
+import VisibleTaskList from '../containers/VisibleTaskList'
 import TaskInput from './TaskInput'
 import styled from 'styled-components'
 
@@ -17,7 +16,7 @@ const Article = styled.article`
 
 const TaskArticle = () => (
 	<Article>
-		<TaskList tasks={[...TASKS]} />
+		<VisibleTaskList/>
 		<TaskInput />
 	</Article>
 )
