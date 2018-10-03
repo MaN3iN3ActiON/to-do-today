@@ -1,5 +1,6 @@
 import InitialState from './initialState'
 
+// if there is no state in localstorage, load from initialstate
 export const loadState = () => {
 	try {
 		const serializedState = localStorage.getItem('state')
@@ -13,7 +14,6 @@ export const saveState = (state) => {
 	try {
 		const serializedState = JSON.stringify(state)
 		localStorage.setItem('state',serializedState)
-		console.log(localStorage.getItem('state'))
 	} catch (error) {
 		// ignore write errors
 	}

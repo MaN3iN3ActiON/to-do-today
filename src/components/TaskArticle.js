@@ -1,6 +1,6 @@
 import React from 'react'
 import VisibleTaskList from '../containers/VisibleTaskList'
-import TaskInput from './TaskInput'
+import TaskInput from '../containers/TaskInput'
 import styled from 'styled-components'
 
 const Article = styled.article`
