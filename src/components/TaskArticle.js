@@ -17,7 +17,7 @@ const Article = styled.article`
 
 const TaskArticle = () => (
 	<Article>
-		<TaskList data={TASKS} />
+		<TaskList tasks={[...TASKS]} />
 		<TaskInput />
 	</Article>
 )

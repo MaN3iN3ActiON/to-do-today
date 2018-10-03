@@ -10,8 +10,8 @@ const List = styled.ul`
 	padding-bottom: 10px;
 `
 
-const TaskList = ({ data }) => {
-	const taskList = data.map(task => <Task key={task.id} task={task} />)
+const TaskList = ({ tasks }) => {
+	const taskList = tasks.map(task => <Task key={task.id} {...task} />)
 	return (
 		<section>
 			<h3>Today</h3>
@@ -21,7 +21,7 @@ const TaskList = ({ data }) => {
 }
 
 TaskList.propTypes = {
-	data: PropTypes.array
+	tasks: PropTypes.array
 }
 
 export default TaskList

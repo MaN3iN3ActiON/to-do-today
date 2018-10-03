@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Task = ({ task }) => (
+const Task = ({ title, stage }) => (
 	<li>
-		<strong>{task.title}</strong>
-		<em>{task.stage}</em>
+		<strong>{title}</strong>
+		<em>{stage}</em>
 	</li>
 )
 
 Task.propTypes = {
-	task: PropTypes.object
+	title: PropTypes.string,
+	stage: PropTypes.string
 }
 
 export default Task
