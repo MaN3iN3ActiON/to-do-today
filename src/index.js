@@ -6,13 +6,12 @@ import registerServiceWorker from './registerServiceWorker'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
-// import { loadState, saveState } from './localStorage'
-import InitialState from './data'
-//const persistedState = loadState()
-const store = createStore(rootReducer, InitialState)
+import { loadState, saveState } from './localStorage'
+const persistedState = loadState()
+const store = createStore(rootReducer, persistedState)
 
 store.subscribe(() => {
-	console.log('initial state' + store.getState())
+	saveState({ tasks: store.getState().tasks })
 })
 
 ReactDOM.render(
