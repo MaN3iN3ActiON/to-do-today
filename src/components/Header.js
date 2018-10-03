@@ -21,10 +21,10 @@ const Header = styled.header`
 	}
 `
 
-const HeaderContainer = () => (
+const HeaderComponent = () => (
 	<Header>
 		<h1>Tasks</h1>
 	</Header>
 )
 
-export default HeaderContainer
+export default HeaderComponent
