@@ -13,7 +13,7 @@ const getVisibleTasks = (tasks, filter = VisibilityFilters.SHOW_DOING) => {
 	case VisibilityFilters.SHOW_TODO:
 		return tasks.filter(task => task.stage === STAGE.TO_DO)
 	default:
-		return [...tasks]
+		throw new Error('Unknown filter: ' + filter)
 	}
 }
 
