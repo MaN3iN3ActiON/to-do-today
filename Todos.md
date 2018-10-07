@@ -9,5 +9,6 @@
 	- [ ] add drag functionality
 	- [ ] add edit task functionality
 - [ ] improve styling
-- [ ] add SET_VISIBLILTY_FILTER in actions
-
+- [x] add SET_VISIBLILTY_FILTER in actions
+- [ ] add container for visibilityFilter
+ 

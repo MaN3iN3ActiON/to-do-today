@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import FilterLink from '../containers/FilterLink'
+import { VisibilityFilters } from '../actions'
 
 const Aside = styled.aside`
 	user-select: none !important;
@@ -24,10 +26,13 @@ const SideNavBar = () => (
 		<nav>
 			<ul>
 				<li>
-					<a href="#today">Today</a>
+					<FilterLink filter={VisibilityFilters.SHOW_DONE}>Done</FilterLink>
 				</li>
 				<li>
-					<a href="#7days">Next 7days</a>
+					<FilterLink filter={VisibilityFilters.SHOW_DOING}>Doing</FilterLink>
+				</li>
+				<li>
+					<FilterLink filter={VisibilityFilters.SHOW_TODO}>ToDo</FilterLink>
 				</li>
 			</ul>
 		</nav>
