@@ -10,5 +10,5 @@
 	- [ ] add edit task functionality
 - [ ] improve styling
 - [x] add SET_VISIBLILTY_FILTER in actions
-- [ ] add container for visibilityFilter
- 
+- [x] add container for visibilityFilter
+- [ ] improve TaskList to show done,doing,todo tasks
