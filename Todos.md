@@ -1,2 +1,11 @@
 # ToDo
 - [ ] rename [TaskArticle.js](./src/components/TaskArticle.js)
+- [ ] show date field next to Today
+- [ ] improve add task form
+	- [ ] add date field
+	- [ ] add priority field
+- [ ] improve task display *ListElement*
+	- [ ] add check task functionality
+	- [ ] add edit task functionality
+- [ ] improve styling
+- [ ] persist data in a local file
