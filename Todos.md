@@ -2,10 +2,12 @@
 - [ ] rename [TaskArticle.js](./src/components/TaskArticle.js)
 - [ ] show date field next to Today
 - [ ] improve add task form
-	- [ ] add date field
-	- [ ] add priority field
+	- [x] add date field
+	- [x] add priority field
+	- [ ] style the form
 - [ ] improve task display *ListElement*
-	- [ ] add check task functionality
+	- [ ] add drag functionality
 	- [ ] add edit task functionality
 - [ ] improve styling
-- [ ] persist data in a local file
+- [ ] add SET_VISIBLILTY_FILTER in actions
+

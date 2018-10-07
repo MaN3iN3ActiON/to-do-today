@@ -8,7 +8,7 @@ let TaskInput = ({ dispatch }) => {
 	let title, date, priority
 	let prChoices = []
 	for (let pr in priorities) {
-		prChoices.push(<option value={priorities[pr]}>{pr}</option>)
+		prChoices.push(<option key={priorities[pr]} value={priorities[pr]}>{pr}</option>)
 	}
 	return (
 		<form
