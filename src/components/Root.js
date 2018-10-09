@@ -4,6 +4,7 @@ import App from './App'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+//todo: can filter be optional if so then what happens
 const Root = ({ store }) => (
 	<Provider store={store}>
 		<Router>
