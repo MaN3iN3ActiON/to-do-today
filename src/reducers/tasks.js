@@ -11,7 +11,6 @@ const tasks = (tasks = [], action) => {
 		return [
 			...tasks,
 			{
-				id: tasks.length + 1,
 				...action.task,
 				stage: STAGE.DOING
 			}

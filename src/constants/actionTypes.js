@@ -1,3 +1,2 @@
 export const ADD_TASK = 'ADD_TASK'
 export const DONE_TASK = 'DONE_TASK'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'

@@ -1,9 +1,9 @@
 import {
 	ADD_TASK,
-	DONE_TASK,
-	SET_VISIBILITY_FILTER
+	DONE_TASK
 } from '../constants/actionTypes'
 import URG_IMP from '../constants/priorities'
+import { v4 } from 'node-uuid'
 
 //action-creators
 export const addTask = ({
@@ -13,26 +13,14 @@ export const addTask = ({
 }) => ({
 	type: ADD_TASK,
 	task: {
+		id: v4(),
 		title,
 		desc,
 		priority
 	}
 })
 
-export const doneTask = ({ id }) => ({
+export const doneTask = (id) => ({
 	type: DONE_TASK,
 	id
 })
-
-export const setVisibilityFilter = filter => ({
-	type: SET_VISIBILITY_FILTER,
-	filter
-})
-
-// SHOW_TODO : will show tasks for the next 7 days
-// SHOW_DOING : will show tasks for to day
-export const VisibilityFilters = {
-	SHOW_DONE: 'SHOW_DONE',
-	SHOW_DOING: 'SHOW_DOING',
-	SHOW_TODO: 'SHOW_TODO'
-}

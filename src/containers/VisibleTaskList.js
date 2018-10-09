@@ -2,32 +2,34 @@ import { connect } from 'react-redux'
 import STAGE from '../constants/stages'
 import { doneTask } from '../actions'
 import TaskList from '../components/TaskList'
-import { VisibilityFilters } from '../actions'
+import { withRouter } from 'react-router-dom'
 
-const getVisibleTasks = (tasks, filter = VisibilityFilters.SHOW_DOING) => {
+const getVisibleTasks = (tasks, filter = 'doing') => {
 	switch (filter) {
-	case VisibilityFilters.SHOW_DOING:
+	case 'doing':
 		return tasks.filter(task => task.stage === STAGE.DOING)
-	case VisibilityFilters.SHOW_DONE:
+	case 'done':
 		return tasks.filter(task => task.stage === STAGE.DONE)
-	case VisibilityFilters.SHOW_TODO:
+	case 'todo':
 		return tasks.filter(task => task.stage === STAGE.TO_DO)
 	default:
 		throw new Error('Unknown filter: ' + filter)
 	}
 }
 
-const mapStateToProps = state => ({
-	tasks: getVisibleTasks(state.tasks, state.visibilityFilter)
+const mapStateToProps = (state, { match }) => ({
+	tasks: getVisibleTasks(state.tasks, match.params.filter)
 })
 
 const mapDispatchToProps = dispatch => ({
-	onDoneTaskClick: id => dispatch(doneTask({ id }))
+	onDoneTaskClick: id => dispatch(doneTask(id))
 })
 
-const VisbleTaskList = connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(TaskList)
+const VisbleTaskList = withRouter(
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)(TaskList)
+)
 
 export default VisbleTaskList
