@@ -1,30 +1,31 @@
-import STAGE from './constants/stages'
-import URG_IMP from './constants/priorities'
+import STAGE from '../constants/stages'
+import URG_IMP from '../constants/priorities'
+import { v4 } from 'node-uuid'
 
 let tasks = [
 	{
-		id: 1,
+		id: v4(),
 		title: 'Task1',
 		desc: 'complete task1',
 		priority: URG_IMP.Q1,
 		stage: STAGE.DOING
 	},
 	{
-		id: 2,
+		id: v4(),
 		title: 'Task2',
 		desc: 'complete task2',
 		priority: URG_IMP.Q2,
 		stage: STAGE.DOING
 	},
 	{
-		id: 3,
+		id: v4(),
 		title: 'Task3',
 		desc: 'complete task3',
 		priority: URG_IMP.Q3,
 		stage: STAGE.DONE
 	},
 	{
-		id: 4,
+		id: v4(),
 		title: 'Task4',
 		desc: 'complete task4',
 		priority: URG_IMP.Q4,
