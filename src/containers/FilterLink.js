@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 
 const FilterLink = ({ filter, children }) => (
 	<NavLink
-		to={`/${filter}`}
+		to={`/${filter === 'doing'? '' : filter}`}
+		exact
 		activeStyle={{
 			textDecoration: 'none',
 			color: 'black'
