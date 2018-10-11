@@ -1,23 +1,16 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import logger from 'redux-logger'
 import rootReducer from './reducers'
-//removing persisting data in localStorage
-//import { loadState, saveState } from './localStorage'
-//import throttle from 'lodash/throttle'
+
 
 const configureStore = () => {
-	//const persistedState = loadState()
+	const middlewares = [thunk,logger]
 	const store = createStore(
 		rootReducer,
-		undefined,
-		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+		applyMiddleware(...middlewares)
 	)
 
-	//writing to localstorage atmost once a sec
-	// store.subscribe(
-	// 	throttle(() => {
-	// 		saveState({ tasks: store.getState().tasks })
-	// 	}, 1000)
-	// )
 	return store
 }
 

@@ -1,10 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { doneTask,recieveTasks } from '../actions'
+import * as actions from '../actions'
 import TaskList from '../components/TaskList'
 import { withRouter } from 'react-router-dom'
-import { getVisibleTasks } from '../reducers'
-import { fetchTasks } from '../api'
+import { getVisibleTasks, getIsFetching } from '../reducers'
 
 class VisibleTaskList extends React.Component {
 	componentDidMount() {
@@ -16,10 +15,12 @@ class VisibleTaskList extends React.Component {
 		}
 	}
 	fetchData() {
-		const {filter,recieveTasks} = this.props
-		fetchTasks(filter).then(resolve => recieveTasks(filter,resolve))
+		const { filter, fetchTasks } = this.props
+		fetchTasks(filter)
 	}
 	render() {
+		const { tasks, isFetching } = this.props
+		if (isFetching && !tasks.length) return <p>Loading . . . </p>
 		return <TaskList {...this.props} />
 	}
 }
@@ -28,13 +29,14 @@ const mapStateToProps = (state, { match }) => {
 	const filter = match.params.filter || 'doing'
 	return {
 		filter,
-		tasks: getVisibleTasks(state, filter)
+		tasks: getVisibleTasks(state, filter),
+		isFetching: getIsFetching(state, filter)
 	}
 }
 
 const mapDispatchToProps = dispatch => ({
-	onDoneTaskClick: id => dispatch(doneTask(id)),
-	recieveTasks: (filter,response) => dispatch(recieveTasks(filter,response))
+	onDoneTaskClick: id => dispatch(actions.doneTask(id)),
+	fetchTasks: filter => dispatch(actions.fetchTasks(filter))
 })
 
 export default withRouter(
