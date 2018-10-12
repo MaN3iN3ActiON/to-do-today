@@ -1,10 +1,12 @@
 import FakeDB from './sampleData'
 import STAGE from '../constants/stages'
+import { v4 } from 'node-uuid'
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms), undefined)
 
 export const fetchTasks = filter =>
-	delay(5000).then(() => {
+	delay(1000).then(() => {
+		if (Math.random() > 0.5) throw new Error('errororo!')
 		switch (filter) {
 		case 'doing':
 			return FakeDB.tasks.filter(t => t.stage === STAGE.DOING)
@@ -15,4 +17,15 @@ export const fetchTasks = filter =>
 		default:
 			throw new Error(`Unknown filter:${filter}`)
 		}
+	})
+
+export const addTask = task =>
+	delay(1000).then(() => {
+		const newTask = {
+			id: v4(),
+			stage: STAGE.DOING,
+			...task
+		}
+		FakeDB.tasks.push(newTask)
+		return newTask
 	})

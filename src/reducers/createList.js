@@ -3,12 +3,11 @@ import { combineReducers } from 'redux'
 
 const createList = filter => {
 	const ids = (state = [], action) => {
-		if (action.filter !== filter) {
-			return state
-		}
 		switch (action.type) {
 		case actionType.FETCH_TASKS_SUCCESS:
-			return action.response.map(t => t.id)
+			return action.filter === filter ? [...action.response.result] : state
+		case actionType.ADD_TASK_SUCCESS:
+			return filter === 'doing' ? [...state, action.response.result] : state
 		default:
 			return state
 		}
@@ -27,9 +26,24 @@ const createList = filter => {
 			return state
 		}
 	}
+	const errorMessage = (state = null, action) => {
+		if (action.filter !== filter) {
+			return state
+		}
+		switch (action.type) {
+		case actionType.FETCH_TASKS_FAILURE:
+			return action.message
+		case actionType.FETCH_TASKS_REQUEST:
+		case actionType.FETCH_TASKS_SUCCESS:
+			return null
+		default:
+			return state
+		}
+	}
 	return combineReducers({
 		ids,
-		isFetching
+		isFetching,
+		errorMessage
 	})
 }
 
@@ -37,3 +51,4 @@ export default createList
 
 export const getIds = state => state.ids
 export const getIsFetching = state => state.isFetching
+export const getErrorMessage = state => state.errorMessage
