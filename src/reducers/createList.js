@@ -8,6 +8,10 @@ const createList = filter => {
 			return action.filter === filter ? [...action.response.result] : state
 		case actionType.ADD_TASK_SUCCESS:
 			return filter === 'doing' ? [...state, action.response.result] : state
+		case actionType.DONE_TASK_SUCCESS:
+			return filter === 'done'
+				? [...state, action.response.result]
+				: state.filter(id => id !== action.response.result)
 		default:
 			return state
 		}

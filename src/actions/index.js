@@ -31,10 +31,26 @@ export const addTask = ({
 	)
 }
 
-export const doneTask = id => ({
-	type: actionTypes.DONE_TASK,
-	id
-})
+export const doneTask = id => dispatch => {
+	dispatch({
+		type: actionTypes.DONE_TASK_REQUEST,
+		id
+	})
+	return api.doneTask(id).then(
+		response => {
+			dispatch({
+				type: actionTypes.DONE_TASK_SUCCESS,
+				response: normalize(response, schema.task)
+			})
+		},
+		error => {
+			dispatch({
+				type: actionTypes.FETCH_TASKS_FAILURE,
+				message: error.message || 'No such Task!'
+			})
+		}
+	)
+}
 
 export const fetchTasks = filter => (dispatch, getState) => {
 	if (getIsFetching(getState(), filter)) {

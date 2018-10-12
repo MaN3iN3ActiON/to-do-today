@@ -29,3 +29,14 @@ export const addTask = task =>
 		FakeDB.tasks.push(newTask)
 		return newTask
 	})
+
+export const doneTask = id =>
+	delay(1000).then(() => {
+		for (let t of FakeDB.tasks) {
+			if (t.id === id) {
+				t.stage = STAGE.DONE
+				return t
+			}
+		}
+		throw new Error('NO Task with such ID')
+	})
